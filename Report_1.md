@@ -1,8 +1,8 @@
 ## [Quocca Blog](https://blog.quoccabank.com/)
 
-### IDOR
 
 **Steps to flags**
+IDOR:
 1. Use `ffuf` to fuzz  https://blog.quoccabank.com/?p=FUZZ  
 
 ``` bash
