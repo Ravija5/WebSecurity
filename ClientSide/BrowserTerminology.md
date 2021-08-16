@@ -10,11 +10,14 @@ Two URIs are of the same origin if they have the same sceme (http), host (www.xx
 * https://foo.example.org, https://bar.example.org (same site casue org is suffix and example is domain label preceding)
 * https://foo.github.io, https://bar.github.io (cross site cause github.io is suffix and foo/bar are domain labels preceding)
 
-## Same Origin Policy
+## Same Origin Policy  
+A page can have multiple origins (resources loaded from somewhere, frames etc.)  
 
-Secuirty mechanism stating that only same origins can share resources with each other. 
-This prevents a malicious website from 
+SOP is a security mechanism stating that only same origins can share resources with each other.   
 
+Rules:  
+1. Script from Origin 1 can send data to Origin 2  
+2. But it cannot access data from Origin 2 (or see the response)  
 
 ## To Allow Cross Origin Access - CORS (Cross Origin Resource Sharing)
 

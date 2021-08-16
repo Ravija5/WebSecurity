@@ -137,4 +137,17 @@ Error based extraction:
 
 # wallet.quoccabank.com
 
+# notes.quoccabank.com
+Access Control Vuln:  
 
+1. Cookie was a JWT token.  
+2. Changed username to admin, and modified expiry time to get flag
+
+# files.quoccabank.com
+Flag 1: Brute forcing the pins in `files.quoccabank.com/admin`  
+
+Flag 2: Logging in as username=admin, password=0 (Got clue from sales.quoccabank)
+
+Flag 3: Escalating privilege using /staff/wfh 
+
+Flag 4: Why isnt my JWTtoken with flask key not working??

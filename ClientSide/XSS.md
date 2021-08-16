@@ -6,4 +6,5 @@ Injection of malicious client side code into user's browser
 2. Blind XSS - type of stored XSS but you can't see the alert since it pops up in a page that you don't have access to
 3. DOM Based XSS 
 
-# Payloads
+# Targets to try XSS
+1. User-Agent in header

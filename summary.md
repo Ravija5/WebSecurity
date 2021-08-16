@@ -15,7 +15,40 @@
 8. 
 
 ## Client Side
-7. 
+
+
+## Authentication
+Identifies a specific user logging in.
+
+1. Brute forcing passwords - use `template.py` with Seclists
+    * Try admin, admin
+    * Try guest, guest 
+2. Check if password/url params are known hashes
+    * Enter hash value on google (for SHA, MD5)
+3. Check if password/url params are encoded
+    * Base 64 onions
+    * Base 58
+    * URL encoding
+    * JWT encoding
+    * Other base encodings...
+2. Broken forgot password/password reset functionality 
+    * Is the reset email link generated securely
+3. Session hijacking - hijacking an active user's session 
+    * Predictable session token/cookie
+    * Client Side Attacks(XSS) 
+    * Session fixation - stealing a valid user's session
+4. XSS Stealing cookies
+5. Injection on input fields
+6. Hashes 
+
+## Authorization (Access Control)
+Identifies if a user has permission/privilege to take an actionor use a resource.
+
+1. IDOR (id=2)
+2. Browse to privileged pages as an unprivileged user
+3. Modify own user's page
+4. CSRF - force server/legitimate user to make a priviledged action
+5. XSS- use another user to fetch privileged content
 
 # Tools
 1. Pastebin
@@ -33,4 +66,3 @@
     ```
     lt -port 8000
     ```
-
