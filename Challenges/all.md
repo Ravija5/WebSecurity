@@ -151,3 +151,39 @@ Flag 2: Logging in as username=admin, password=0 (Got clue from sales.quoccabank
 Flag 3: Escalating privilege using /staff/wfh 
 
 Flag 4: Why isnt my JWTtoken with flask key not working??
+
+
+# ctfproxy2.quoccabank.com
+Robots.txt shows a /flag path
+
+In /flag path's source it is mentioned that "adam said we can't show our super secret flag to external users"
+
+So perhaps there is a way to use the server to call /flag instead. (SSRF)
+
+Navigate to ctfproxy2.quoccabank.com/me, I see potential to enter an internal link.
+There is some WAF code in the src:
+```js
+my billion-dollar WAF machine learning algorithm:
+
+    url = request.form.get("avatar", "")
+    if not url.endswith(".png"):
+      flash("Avatar must be png file!", "danger")
+      return redirect(url_for("me"))
+    try:
+      blacklist = ['?', '127.', 'localhost', '0/', '::', '[', ']']
+      for w in blacklist:
+        if w in url:
+          raise Exception("'%s' is dangerous" % w)
+      try:
+        domain = re.match(r"^https?://([a-zA-Z0-9-_.]+)", url).group(1)
+      except IndexError:
+        raise Exception("invalid url")
+      ip = socket.gethostbyname(domain)
+      if ipaddress.ip_address(unicode(ip)).is_private:
+        raise Exception("it is forbidden to access internal server " + ip)
+```
+More:
+
+https://book.hacktricks.xyz/pentesting-web/ssrf-server-side-request-forgery
+
+http://www.google.com@2130706433/flag#1.png
