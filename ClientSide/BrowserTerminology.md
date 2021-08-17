@@ -29,17 +29,17 @@ When a Site A i.e. the origin, requests a resource from Site B. Site B sends bac
 ## Attributes for cookies
 1. HttpOnly - allow/deny JS scripts to access cookie (can't use document.cookie)
 2. Secure - can only send over TLS connections (https)
-3. SameSite 
-    3.1 If same site, then cookies are always sent
-    3.2 For cross site:   
+3. SameSite   
+    3.1 If same site, then cookies are always sent  
+    3.2 For cross site:       
         3.1 Strict  - Browser will only sent cookie in 1st party context (i.e. url matches the first party site). 
         3.2 Lax - Browser will send the cookie when top level navigations occurs from third party pages (i.e. clicking on a link in third party leading ot first party)
         3.3 None - Browser sends cookie when requesting a resource on the third party site.
 
 
 ## CSP (Content Security Policy)
-Enforces loading of resources on a page from trusted location. 
-Effective against XSS
+Enforces loading of resources on a page from trusted location.   
+Effective against XSS.
 
 
 
