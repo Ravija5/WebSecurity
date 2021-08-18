@@ -182,8 +182,5 @@ my billion-dollar WAF machine learning algorithm:
       if ipaddress.ip_address(unicode(ip)).is_private:
         raise Exception("it is forbidden to access internal server " + ip)
 ```
-More:
-
-https://book.hacktricks.xyz/pentesting-web/ssrf-server-side-request-forgery
 
 http://www.google.com@2130706433/flag#1.png

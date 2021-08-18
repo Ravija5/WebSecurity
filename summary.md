@@ -1,21 +1,22 @@
 # Steps when searching for vulns
 
 ## Generic
+0. [Recon](/Users/ravijamaheshwari/Documents/csGitRepos/WebSecurity/recon.md)
 1. Look in source code
 2. Look in headers
 3. Look in robots.txt
 
 ## Server Side  
-4. Try LFI in URL bar   
+4. Try LFI in URL bar  
     * Or Latex injection  
     * Or CSV Injection  
 5. Try Template injection in text input fields  
 6. SQL injection  
 7. XXE (if the website uses any xml)      
-8. 
 
 ## Client Side
-
+1. XXS
+2. CSRF
 
 ## Authentication
 Identifies a specific user logging in.
@@ -51,11 +52,13 @@ Identifies if a user has permission/privilege to take an actionor use a resource
 5. XSS- use another user to fetch privileged content
 
 # Tools
-1. Pastebin
+1. Pastebin 
 2. Tinyurl
 3. Cookie Editor
-4. TBD - user agent changer
-5. TBD - tool that makes line green if it sees burp flag
+4. Changing user agent
+```
+Click on three dots in dev tools -> More tools -> Network Conditions -> Uncheck choose default
+```
 6. Cyberchef (https://gchq.github.io/CyberChef/)
 7. Hosting a URL 
     * Use **python local server** to host content on local host 8000 (usually)
@@ -66,3 +69,4 @@ Identifies if a user has permission/privilege to take an actionor use a resource
     ```
     lt -port 8000
     ```
+8. Changing User Agent via Chrome 
