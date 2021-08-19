@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-DOMAIN=quoccabank.com
+DOMAIN=quoccaos.quoccabank.com
 
 #Seclists files
 SUBDOMAINS="/Users/ravijamaheshwari/Documents/csGitRepos/WebSecurity/SecLists/top_5000_subdomains.txt"
@@ -23,6 +23,9 @@ FINAL_SUBDOMAINS="/Users/ravijamaheshwari/temp/final_subdomains.txt"
 echo "****** Recon for $DOMAIN ********"
 
 #Files clean up and creation
+rm -rf $ALTDNS_OUTPUT
+touch $ALTDNS_OUTPUT
+
 rm -rf $MASSDNS_INPUT_1
 touch $MASSDNS_INPUT_1
 

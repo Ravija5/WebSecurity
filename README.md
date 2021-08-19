@@ -1,7 +1,9 @@
 # Steps when searching for vulns
 
+**TODO** - link this stuff to the relevant pages. 
+
 ## Generic
-0. [Recon](/Users/ravijamaheshwari/Documents/csGitRepos/WebSecurity/recon.md)
+0. Recon 
 1. Look in source code
 2. Look in headers
 3. Look in robots.txt
